@@ -1,12 +1,18 @@
+function finding(arr, id) {
+  return arr.find(element => element.id === id)
+}
+// helper function that finds by matching arr and id;
+
 function findAuthorById(authors, id) {
-  return authors.find((author) => author.id === id);
+  return finding(authors, id);
 }
 // used find to find an author that matches with given id.
 
 function findBookById(books, id) {
-  return books.find((book) => book.id === id);
+  return finding(books, id);
 }
 //used find to find a book that matches with given id.
+
 function partitionBooksByBorrowedStatus(books) {
   const returned = books.filter(book => book.borrows[0].returned);
   const borrowed = books.filter(book => !book.borrows[0].returned);
